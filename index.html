@@ -24,21 +24,41 @@
         var mainMap = new 
         google.maps.Map(document.getElementById('map'), options);
 
-        // Making Markers
-        var marker = new google.maps.Marker({
-          position: {lat: 29.6480, lng: -82.3440},
-          map: mainMap
-        });
 
-        var popUpMenu = new google.maps.InfoWindow({
-          content: '<h1> What is the issue? <\h1>'
-        });
 
-        marker.addListener('click', function(){
-          popUpMenu.open(mainMap, marker);
-        })
+        var markers = [
+        {
+          coords: {lat: 29.6480, lng: -82.3440},
+          content: '<h1>This is a Test</h1>'
+        }
+        ];
 
+        for (var i = 0; i < markers.length; i++)
+        {
+          addMarker(markers[i]);
+        }
+        
         // Making Markers through a function
+        function addMarker(props)
+        {
+          var marker = new google.maps.Marker({
+            position: props.coords,
+            map: mainMap
+          });
+        }
+
+        // Checking for a comment
+        if (props.content)
+        {
+          var infoWindow = new google.maps.InfoWindow({
+            content:props.content
+          });
+
+          marker.addListener('click', function(){
+            infoWindow.open(mainMap, marker);
+          });
+        }
+
 
        }
 
