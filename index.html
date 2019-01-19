@@ -11,33 +11,66 @@
   <body>
     <div id="map"></div>
     <script>
-      function initMap() {
-        var myLatLng = {lat: 29.6480, lng: -82.3440};
 
-        // Create a map object and specify the DOM element
-        // for display.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: myLatLng,
-		  zoom: 15,
-		  mapTypeId: google.maps.MapTypeId.SATELLITE
-		});
+      function initMap() 
+      {
+        var options = 
+        {
+          zoom: 20,
+          center: {lat: 29.6480, lng: -82.3440},
+          mapTypeId: google.maps.MapTypeId.SATELLITE
+        }
 
-		// var changingLat
-		
-		// function placePing()
-		// {
-		// 	// Create a marker and set its position.
-		// 	var marker = new google.maps.Marker({
-		// 	  map: map,
-		// 	  position: myLatLng,
-		// 	  title: 'Problem is Illustrated'
-		// 	});
-		// }
+        var mainMap = new 
+        google.maps.Map(document.getElementById('map'), options);
+
+        // Making Markers
+        var marker = new google.maps.Marker({
+          position: {lat: 29.6480, lng: -82.3440},
+          map: mainMap
+        });
+
+        var popUpMenu = new google.maps.InfoWindow({
+          content: '<h1> What is the issue? <\h1>'
+        });
+
+        marker.addListener('click', function(){
+          popUpMenu.open(mainMap, marker);
+        })
+
+        // Making Markers through a function
+
        }
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpkcR8rXn5QMzjSAZ5Nyyl733P1DWCr3g&callback=initMap"
-		async defer></script>
+    async defer></script>
 	
   </body>
 </html>
+
+<!-- <script>
+    var map1 = new google.maps.Map(document.getElementById('map'), {
+          center: myLatLng,
+		      zoom: 15,
+		      mapTypeId: google.maps.MapTypeId.SATELLITE
+		});
+    
+    google.maps.event.addListener(map1, 'click', function(event)
+      {
+          addMarkerRight(event.myLatLng, map1);
+      });
+
+      function addMarkerRight(location, map)
+      {
+          var newMarker;
+          newMarker = new google.maps.Marker
+          (
+            {
+              position: location,
+              label: "This is a test",
+              map: map
+            }
+          )
+      }
+    </script> -->
