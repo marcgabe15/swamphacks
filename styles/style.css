@@ -1,7 +1,52 @@
+header {
+    background: #c0c0c0;
+    margin: 0;
+    padding: 10px;
+}
 #map {
-    height: 100%;
-    
+
+    flex: 1;
+    /*
+    height: 100%; 
+    width: 50%;
+    position:relative; 
+    top:0; 
+    left:50%; 
+    right:0; */
+    display:inline-block;
+
   }
+#main {
+    height: 100%;
+    background:#8D99AE;
+    display: flex;
+}
+.form {
+    height: 100%;
+    width: 30%;
+    border: black, 200px;
+    background:#28254e;
+}
+title {
+    font-family: 'Fjalla One', sans-serif;
+
+    /*font-family: 'Noto Sans', sans-serif;*/
+}
+.content-wrap {
+    
+    left: 50%;
+
+}
+/*
+#panel {
+    height: 100%;
+    background-color: #DDD; 
+    position:absolute; 
+    top:0; 
+    left:0;
+    bottom:0; width:300px;
+    
+}
   /* Optional: Makes the sample page fill the window. */
   html, body {
     height: 100%;
