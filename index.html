@@ -16,50 +16,65 @@
       {
         var options = 
         {
-          zoom: 20,
+          zoom: 15,
           center: {lat: 29.6480, lng: -82.3440},
           mapTypeId: google.maps.MapTypeId.SATELLITE
         }
 
+        // New Map
         var mainMap = new 
         google.maps.Map(document.getElementById('map'), options);
 
+        google.maps.event.addListener(mainMap, 'rightclick',
+        function(event) {
+          addMarker({coords:event.latLng});
+        });
 
+          var markers = [
+          {
+            coords:{lat: 29.6480, lng: -82.3440},
+            content: '<h3> Marston Lib </h3>'
+          },
+          {
+            coords:{lat: 29.6499, lng: -82.3486},
+            content: '<h3> UF Stadium </h3>'
+          }
+          ];
 
-        var markers = [
-        {
-          coords: {lat: 29.6480, lng: -82.3440},
-          content: '<h1>This is a Test</h1>'
-        }
-        ];
+          // Loop Through Markers
+          for (var i = 0; i < markers.length; i++)
+          {
+            addMarker(markers[i]);
+          }
 
-        for (var i = 0; i < markers.length; i++)
-        {
-          addMarker(markers[i]);
-        }
-        
-        // Making Markers through a function
-        function addMarker(props)
-        {
-          var marker = new google.maps.Marker({
-            position: props.coords,
-            map: mainMap
-          });
-        }
+          // Add Marker Function
+          function addMarker(property)
+          {
+            var marker = new google.maps.Marker({
+              position: property.coords,
+              map: mainMap
+            });
 
-        // Checking for a comment
-        if (props.content)
-        {
-          var infoWindow = new google.maps.InfoWindow({
-            content:props.content
-          });
+            // Check content to see if already edited
+            if (property.content)
+            {
+              var infoWindow = new google.maps.InfoWindow({
+                content: property.content
+              });
+              marker.addListener('click', function(){
+                infoWindow.open(mainMap, marker);
+              });
+            }
 
-          marker.addListener('click', function(){
-            infoWindow.open(mainMap, marker);
-          });
-        }
+            else
+            {
+              var editorWindow = new google.maps.InfoWindow();
 
-
+              marker.addListener('click', function(){
+                infoWindow.open(mainMap, marker);
+              });
+            }
+          }
        }
 
     </script>
