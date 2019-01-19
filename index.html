@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+/*<!DOCTYPE html>
 <html>
 	
   <head>
@@ -22,60 +22,42 @@
         }
 
         // New Map
-        var mainMap = new 
-        google.maps.Map(document.getElementById('map'), options);
+        var mainMap = new google.maps.Map(document.getElementById('map'), options);
 
-        google.maps.event.addListener(mainMap, 'rightclick',
-        function(event) {
+        google.maps.event.addListener(mainMap, 'rightclick', function(event) {
+          
           addMarker({coords:event.latLng});
+        
         });
 
-          var markers = [
-          {
-            coords:{lat: 29.6480, lng: -82.3440},
-            content: '<h3> Marston Lib </h3>'
-          },
-          {
-            coords:{lat: 29.6499, lng: -82.3486},
-            content: '<h3> UF Stadium </h3>'
-          }
-          ];
+        // Add Marker Function
+        function addMarker(property)
+        {
+          var marker = new google.maps.Marker({
 
-          // Loop Through Markers
-          for (var i = 0; i < markers.length; i++)
-          {
-            addMarker(markers[i]);
-          }
+            position: property.coords,
+            map: mainMap
+          
+          });
 
-          // Add Marker Function
-          function addMarker(property)
-          {
-            var marker = new google.maps.Marker({
-              position: property.coords,
-              map: mainMap
-            });
+          var printScreen = '<h4>What is the problem: </h4> <input id = "problem"></input>' + 
+          '<br/>' + '<h4> What is the building: </h4> <input id = "problem"></input>' + '<br/>'
+          + '<button id = "Submit">submit</button>';
 
-            // Check content to see if already edited
-            if (property.content)
-            {
-              var infoWindow = new google.maps.InfoWindow({
-                content: property.content
-              });
-              marker.addListener('click', function(){
-                infoWindow.open(mainMap, marker);
-              });
-            }
+          // Check content to see if already edited
+          var infoWindow = new google.maps.InfoWindow({
 
-            else
-            {
-              var editorWindow = new google.maps.InfoWindow();
+            content: printScreen
+          
+          });
 
-              marker.addListener('click', function(){
-                infoWindow.open(mainMap, marker);
-              });
-            }
-          }
-       }
+          marker.addListener('click', function(){
+
+            infoWindow.open(mainMap, marker);
+          
+          });
+        }
+      }
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpkcR8rXn5QMzjSAZ5Nyyl733P1DWCr3g&callback=initMap"
