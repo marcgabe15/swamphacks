@@ -2,26 +2,11 @@
 <html>
 	
   <head>
-    <!-- This stylesheet contains specific styles for displaying
-         the map on this page. Replace it with your own styles as
-         described in the documentation:
-         https://developers.google.com/maps/documentation/javascript/tutorial
-    -->
-    <meta name="viewport" content="initial-scale=1.0">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
   </head>
   <body>
     <div id="map"></div>
@@ -37,18 +22,18 @@
 		  mapTypeId: google.maps.MapTypeId.SATELLITE
 		});
 
-		var changingLat
+		// var changingLat
 		
-		function placePing()
-		{
-			// Create a marker and set its position.
-			var marker = new google.maps.Marker({
-			  map: map,
-			  position: myLatLng,
-			  title: 'Problem is Illustrated'
-			});
-		}
-      }
+		// function placePing()
+		// {
+		// 	// Create a marker and set its position.
+		// 	var marker = new google.maps.Marker({
+		// 	  map: map,
+		// 	  position: myLatLng,
+		// 	  title: 'Problem is Illustrated'
+		// 	});
+		// }
+       }
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpkcR8rXn5QMzjSAZ5Nyyl733P1DWCr3g&callback=initMap"
