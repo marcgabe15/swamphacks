@@ -1,4 +1,4 @@
-header {
+header, footer{
     background: #c0c0c0;
     margin: 0;
     padding: 10px;
@@ -16,17 +16,26 @@ header {
     display:inline-block;
 
   }
+form-stuff {
+
+    background: green;
+    height: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
 #main {
     height: 100%;
     background:#8D99AE;
     display: flex;
 }
-.form {
+.container {
     height: 100%;
     width: 30%;
     border: black, 200px;
     background:#28254e;
 }
+
 title {
     font-family: 'Fjalla One', sans-serif;
 
@@ -37,17 +46,7 @@ title {
     left: 50%;
 
 }
-/*
-#panel {
-    height: 100%;
-    background-color: #DDD; 
-    position:absolute; 
-    top:0; 
-    left:0;
-    bottom:0; width:300px;
-    
-}
-  /* Optional: Makes the sample page fill the window. */
+
   html, body {
     height: 100%;
     margin: 0;

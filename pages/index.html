@@ -16,10 +16,28 @@
       </div>
     </header>
       <div id="main">
-        <div class="form"></div>
+        <div class="container">
+            <div class="container">
+                <form action="#">
+                  <label for="fname">First Name</label>
+                  <input type="text" id="name" name="Full Name" placeholder="Your name..">
+                  <label for="Student">Student</label>
+                  <input type="checkbox" name="Student" value="Stuff"> <br>
+                  <select id="country" name="country">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                  </select>
+                  <input type="submit" value="Submit">
+              
+                </form>
+              </div>
+        </div>
         <div id="map"></div>
       </div>
       <div></div>
+
+      <!--
     <script>
       function initMap() {
         var myLatLng = {lat: 29.6480, lng: -82.3440};
@@ -46,9 +64,13 @@
        }
 
     </script>
+  -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpkcR8rXn5QMzjSAZ5Nyyl733P1DWCr3g&callback=initMap"
     async defer></script>
     <script src="../scripts/sketch.js" async defer></script>
+    <script src="../scripts/p5.dom.js" async defer></script>
+    <script src="../scripts/p5.js" async defer></script>
+    <script src="../scripts/p5.sound.js" async defer></script>
 	
   </body>
   <footer>
