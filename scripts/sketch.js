@@ -30,7 +30,7 @@ function initMap()
 
     var printScreen = '<h4>What is the problem: </h4> <input id = "problem"></input>' + 
     '<br/>' + '<h4> What is the building: </h4> <input id = "problem"></input>' + '<br/>'
-    + '<button id = "Submit" onclick="postData();">submit</button>';
+    + '<button id = "Submit" onclick="{postData();}">submit</button>';
 
     // Check content to see if already edited
     var infoWindow = new google.maps.InfoWindow({

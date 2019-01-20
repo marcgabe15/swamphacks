@@ -64,6 +64,19 @@ header, footer{
         padding: 10px;
     }
 }
+#page-iconcolumns {
+    background: #28254e;
+}
+
+
+.layout-text {
+    font-family: "Noto-Sans", sans-serif;
+    color: 	#ffffff
+}
+.layout-title {
+    font-family: "Fjalla One", sans-serif;
+    color: 	#ffffff
+}
 form-stuff {
 
     background: green;
