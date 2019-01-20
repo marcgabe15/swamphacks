@@ -1,10 +1,11 @@
 
 var LAT = 0;
 var LNG = 0;
-var mainMap = new google.maps.Map(document.getElementById('map'), options);
+var mainMap = null;
 
 function initMap() 
 {
+  mainMap = new google.maps.Map(document.getElementById('map'), options);
   var options = 
   {
     zoom: 15,
