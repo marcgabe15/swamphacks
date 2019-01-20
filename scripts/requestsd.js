@@ -26,8 +26,12 @@ function getData()
     var data = JSON.parse(this.response);
     if (request.status >= 200 && request.status < 400) {
       data.forEach(function(element) {
-        arr.push(element);
-        console.log(element.latitude);
+        var tempMarker = new google.maps.Marker({
+          position: {lat: element.latitude, lng: element.longitude},
+          map: mainMap
+        });
+
+        arr.push(tempMarker);
       });
     }
     else {
@@ -36,4 +40,14 @@ function getData()
   }
 
   request.send();
+}
+
+function update()
+{
+  for (var i = 0; i < arr.length; i++)
+  {
+    arr.pop();
+  }
+
+  getData();
 }
