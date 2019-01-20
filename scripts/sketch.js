@@ -1,9 +1,9 @@
 
 var LAT = 0;
 var LNG = 0;
+
 function initMap() 
 {
-  getData();
   var options = 
   {
     zoom: 15,
@@ -33,7 +33,7 @@ function initMap()
     
     
     var printScreen = '<h4>What is the problem: </h4> <input id = "problem"></input>' + 
-    '<br/>' + '<h4> Where: </h4> <input id = "problem"></input>' + '<br/>'
+    '<br/>' + '<h4> Where: </h4> <input id = "place"></input>' + '<br/>'
     + '<button id = "Submit" onclick="{postData();}">submit</button>';
 
 
