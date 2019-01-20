@@ -4,9 +4,10 @@ var LNG = 0;
 var mainMap;
 function initMap() 
 {
+  getData();
   var options = 
   {
-    zoom: 15,
+    zoom: 20,
     center: {lat: 29.6480, lng: -82.3440},
     mapTypeId: google.maps.MapTypeId.SATELLITE
   }

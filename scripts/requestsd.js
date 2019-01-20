@@ -1,4 +1,4 @@
-var arr;
+var arr = new Array();
 
 function postData() {
   console.log(LAT);
@@ -28,7 +28,7 @@ function getData()
     if (request.status >= 200 && request.status < 400) {
       data.forEach(function(element) {
         var tempMarker = new google.maps.Marker({
-          position: {lat: element.latitude, lng: element.longitude},
+          position: {lat: parseFloat(element.latitude), lng: parseFloat(element.longitude)},
           map: mainMap
         });
 
@@ -43,12 +43,3 @@ function getData()
   request.send();
 }
 
-function update()
-{
-  for (var i = 0; i < arr.length; i++)
-  {
-    arr.pop();
-  }
-
-  getData();
-}
