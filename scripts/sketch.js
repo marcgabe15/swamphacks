@@ -1,6 +1,7 @@
 
 var LAT = 0;
 var LNG = 0;
+var mainMap = new google.maps.Map(document.getElementById('map'), options);
 
 function initMap() 
 {
@@ -11,8 +12,6 @@ function initMap()
     mapTypeId: google.maps.MapTypeId.SATELLITE
   }
 
-  // New Map
-  var mainMap = new google.maps.Map(document.getElementById('map'), options);
 
   google.maps.event.addListener(mainMap, 'click', function(event) {
     document.getElementById
