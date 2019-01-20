@@ -11,7 +11,7 @@ function initMap()
   // New Map
   var mainMap = new google.maps.Map(document.getElementById('map'), options);
 
-  google.maps.event.addListener(mainMap, 'rightclick', function(event) {
+  google.maps.event.addListener(mainMap, 'click', function(event) {
     
     addMarker({coords:event.latLng});
   
@@ -38,6 +38,8 @@ function initMap()
       content: printScreen
     
     });
+
+    infoWindow.open(mainMap, marker);
 
     marker.addListener('click', function(){
 

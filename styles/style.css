@@ -20,11 +20,11 @@ header, footer{
     background: var(--secondary);
 }
 .site-header .layout-hero {
-    min-height: 50vh;
+    max-height: 50vh;
 }
 .site-header .page-section-title {
     font-size: 3em;
-    font-family: var(--font-family-sans-serif);
+    font-family: "Fjalla One", sans-serif;
     font-weight: 200;
   }
   
