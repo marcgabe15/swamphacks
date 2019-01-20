@@ -1,4 +1,5 @@
 
+
 function initMap() 
 {
   var options = 
@@ -12,7 +13,6 @@ function initMap()
   var mainMap = new google.maps.Map(document.getElementById('map'), options);
 
   google.maps.event.addListener(mainMap, 'click', function(event) {
-    
     addMarker({coords:event.latLng});
   
   });
@@ -26,11 +26,13 @@ function initMap()
       map: mainMap
     
     });
+
+   
     
 
     var printScreen = '<h4>What is the problem: </h4> <input id = "problem"></input>' + 
     '<br/>' + '<h4> What is the building: </h4> <input id = "problem"></input>' + '<br/>'
-    + '<button id = "Submit" onclick="{postData();}">submit</button>';
+    + '<button id = "Submit" onclick="{postData(' + property.coords.lat + ',' + property.coords.lng + ');}">submit</button>';
 
     // Check content to see if already edited
     var infoWindow = new google.maps.InfoWindow({
@@ -50,6 +52,8 @@ function initMap()
 
   }
 }
+
+
 
 
 
