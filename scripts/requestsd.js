@@ -1,18 +1,19 @@
 var arr;
-let arr = new Array();
 
 function postData() {
   console.log(LAT);
   console.log(LNG);
+  console.log(document.getElementById("place").value);
+  console.log(document.getElementById("problem").value);
     fetch('http://pingcare.biz/api/pings/', {
   headers: { "Content-Type": "application/json; charset=utf-8" },
   method: 'POST',
   body: JSON.stringify({
         latitude : LAT,
         longitude : LNG,
-        text_loc : "jeeff beezbos",
-        ping_count : "1",
-        issue : "elon musk"
+        text_loc : document.getElementById("place").value,
+        ping_count : 1,
+        issue : document.getElementById("problem").value
     
   })
 })

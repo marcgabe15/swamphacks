@@ -5,7 +5,6 @@ var mainMap = new google.maps.Map(document.getElementById('map'), options);
 
 function initMap() 
 {
-  getData();
   var options = 
   {
     zoom: 15,
@@ -33,7 +32,7 @@ function initMap()
     
     
     var printScreen = '<h4>What is the problem: </h4> <input id = "problem"></input>' + 
-    '<br/>' + '<h4> Where: </h4> <input id = "problem"></input>' + '<br/>'
+    '<br/>' + '<h4> Where: </h4> <input id = "place"></input>' + '<br/>'
     + '<button id = "Submit" onclick="{postData();}">submit</button>';
 
 
