@@ -26,10 +26,11 @@ function initMap()
       map: mainMap
     
     });
+    
 
     var printScreen = '<h4>What is the problem: </h4> <input id = "problem"></input>' + 
     '<br/>' + '<h4> What is the building: </h4> <input id = "problem"></input>' + '<br/>'
-    + '<button id = "Submit">submit</button>';
+    + '<button id = "Submit" onclick="postData();">submit</button>';
 
     // Check content to see if already edited
     var infoWindow = new google.maps.InfoWindow({
@@ -43,8 +44,11 @@ function initMap()
       infoWindow.open(mainMap, marker);
     
     });
+    
+
   }
 }
+
 
 
 //AIzaSyBpkcR8rXn5QMzjSAZ5Nyyl733P1DWCr3g
