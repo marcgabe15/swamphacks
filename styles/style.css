@@ -16,6 +16,47 @@ header, footer{
     display:inline-block;
 
   }
+.site-nav.inbody {
+    background: var(--secondary);
+}
+.site-header .layout-hero {
+    min-height: 50vh;
+}
+.site-header .page-section-title {
+    font-size: 3em;
+    font-family: var(--font-family-sans-serif);
+    font-weight: 200;
+  }
+  
+  .site-header .page-section-text {
+    font-size: 1.2em;
+  }
+  
+  .site-header .nav-link {
+    position: relative;
+    padding-bottom: 0;
+    margin-bottom: 2px;
+  }
+  
+  .site-header .nav-link:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    max-width: 100px;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: var(--yellow);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-out;
+  }
+  
+  .site-header .nav-link:hover:before {
+    visibility: visible;
+    left: 0;
+    transform: scaleX(1);
+  }
 
 @media screen and (max-width: 768px) {
     .navbar-collapse {
@@ -36,7 +77,12 @@ form-stuff {
     background:#8D99AE;
     display: flex;
 }
-.container {
+.site-header {
+    background-position:center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container1 {
     height: 100%;
     width: 30%;
     border: black, 200px;
