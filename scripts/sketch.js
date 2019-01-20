@@ -1,17 +1,16 @@
 
 var LAT = 0;
 var LNG = 0;
-var mainMap = null;
-
+var mainMap;
 function initMap() 
 {
-  mainMap = new google.maps.Map(document.getElementById('map'), options);
   var options = 
   {
     zoom: 15,
     center: {lat: 29.6480, lng: -82.3440},
     mapTypeId: google.maps.MapTypeId.SATELLITE
   }
+  mainMap = new google.maps.Map(document.getElementById('map'), options);
 
 
   google.maps.event.addListener(mainMap, 'click', function(event) {
