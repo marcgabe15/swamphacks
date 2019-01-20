@@ -16,6 +16,13 @@ header, footer{
     display:inline-block;
 
   }
+
+@media screen and (max-width: 768px) {
+    .navbar-collapse {
+        background-color: red;
+        padding: 10px;
+    }
+}
 form-stuff {
 
     background: green;
