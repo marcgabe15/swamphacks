@@ -1,5 +1,6 @@
 
-
+var LAT = 0;
+var LNG = 0;
 function initMap() 
 {
   var options = 
@@ -16,7 +17,7 @@ function initMap()
     addMarker({coords:event.latLng});
   
   });
-
+  
   // Add Marker Function
   function addMarker(property)
   {
@@ -26,13 +27,15 @@ function initMap()
       map: mainMap
     
     });
+    LAT = property.coords.lat;
+    LNG = property.coords.lng;
 
    
     
-
+    
     var printScreen = '<h4>What is the problem: </h4> <input id = "problem"></input>' + 
     '<br/>' + '<h4> What is the building: </h4> <input id = "problem"></input>' + '<br/>'
-    + '<button id = "Submit" onclick="{postData(' + property.coords.lat + ',' + property.coords.lng + ');}">submit</button>';
+    + '<button id = "Submit" onclick="{postData();}">submit</button>';
 
     // Check content to see if already edited
     var infoWindow = new google.maps.InfoWindow({
