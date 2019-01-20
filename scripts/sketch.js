@@ -3,6 +3,7 @@ var LAT = 0;
 var LNG = 0;
 function initMap() 
 {
+  getData();
   var options = 
   {
     zoom: 15,
@@ -14,8 +15,8 @@ function initMap()
   var mainMap = new google.maps.Map(document.getElementById('map'), options);
 
   google.maps.event.addListener(mainMap, 'click', function(event) {
+    document.getElementById
     addMarker({coords:event.latLng});
-  
   });
   
   // Add Marker Function
@@ -27,15 +28,14 @@ function initMap()
       map: mainMap
     
     });
-    LAT = property.coords.lat;
-    LNG = property.coords.lng;
-
-   
+    LAT = property.coords.lat();
+    LNG = property.coords.lng();
     
     
     var printScreen = '<h4>What is the problem: </h4> <input id = "problem"></input>' + 
-    '<br/>' + '<h4> What is the building: </h4> <input id = "problem"></input>' + '<br/>'
+    '<br/>' + '<h4> Where: </h4> <input id = "problem"></input>' + '<br/>'
     + '<button id = "Submit" onclick="{postData();}">submit</button>';
+
 
     // Check content to see if already edited
     var infoWindow = new google.maps.InfoWindow({
@@ -43,6 +43,7 @@ function initMap()
       content: printScreen
     
     });
+
 
     infoWindow.open(mainMap, marker);
 
@@ -54,7 +55,9 @@ function initMap()
     
 
   }
+
 }
+
 
 
 
